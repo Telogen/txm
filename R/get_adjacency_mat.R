@@ -20,3 +20,5 @@ get_adjacency_mat <- function(data,k = 20){
                                         dims = c(nrow(KNN), nrow(KNN)))
   return(adjacency_mat)
 }
+
+
