@@ -18,7 +18,7 @@ get_adjacency_mat <- function(data,k = 20){
     j <- row[-1]
     return(list(i=i,j=j))
   })
-  adjacency_mat <- Matrix::sparmdataseMatrix(i = unlist(lapply(tmp,function(x){x$i})),
+  adjacency_mat <- Matrix::sparseMatrix(i = unlist(lapply(tmp,function(x){x$i})),
                                         j = unlist(lapply(tmp,function(x){x$j})),
                                         x = 1,
                                         dims = c(nrow(KNN), nrow(KNN)))
