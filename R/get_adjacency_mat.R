@@ -1,4 +1,4 @@
-#' Get adjacency matrix
+#' Get adjacency matrix from a sample-feature matrix
 #'
 #' @param data a matrix whose rows represent samples and columns represent features
 #' @param k how many k nearest neighbors to build adjacency matrix
