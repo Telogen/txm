@@ -4,7 +4,7 @@ Title: txm Bioinfomatics Toolkit
 Version: 0.1.0
 Author: Lejin Tian
 Maintainer: Lejin Tian <ljtian20@fudan.edu.cn>
-Description: Some useful R funtions for bioinformatics study.
+Description: Some useful R functions for bioinformatics study.
 License: MIT
 Encoding: UTF-8
 LazyData: true
