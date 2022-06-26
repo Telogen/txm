@@ -1,17 +1,17 @@
 # txmBioinfoToolkit
 
-Some useful funtions for bioinformatics study.
+Some useful R funtions for bioinformatics study.
 
-# Install 
+## Installation
 ```
 devtools::install_github("Telogen/txmBioinfoToolkit")
 library(txmBioinfoToolkit)
 ```
 
-# Update history
+## Update history
 - 20220626
-  - mykmeans: Perform kmeans with multiple 'k's and automatically select the best k with the maximum silhouette (package 'cluster' required)
-  - get_adjacency_mat: Get adjacency matrix from a sample-feature matrix (package 'Seurat' required)
+  - `mykmeans()`: Perform kmeans with multiple 'k's and automatically select the best k with the maximum silhouette (package 'cluster' required)
+  - `get_adjacency_mat()`: Get adjacency matrix from a sample-feature matrix (package 'Seurat' required)
 
-# Contact
+## Contact
 ljtian20@fudan.edu.cn
