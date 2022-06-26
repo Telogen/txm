@@ -4,8 +4,12 @@
 #' @param k how many k nearest neighbors to build adjacency matrix
 #'
 #' @return Returns a adjacency matrix
-#' @export
 #'
+#' @importFrom Matrix sparseMatrix
+#' @importFrom utils getFromNamespace
+#'
+#' @export
+
 get_adjacency_mat <- function(data,k = 20){
   Seurat_NNHelper <- utils::getFromNamespace("NNHelper", "Seurat")
   KNN <- Seurat_NNHelper(data, k = (k+1), method = "rann")@nn.idx

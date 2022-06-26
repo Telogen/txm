@@ -3,4 +3,7 @@
 export("%>%")
 export(get_adjacency_mat)
 export(mykmeans)
+importFrom(Matrix,sparseMatrix)
+importFrom(cluster,silhouette)
 importFrom(magrittr,"%>%")
+importFrom(utils,getFromNamespace)

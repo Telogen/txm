@@ -6,9 +6,11 @@
 #' @param k a set of candidate centers
 #'
 #' @return returns an object of class "kmeans".
+#'
+#' @importFrom cluster silhouette
+#'
 #' @export
-#'
-#'
+
 mykmeans <- function(x,k){
   sil <- sapply(k,function(one_k){
     KM_out <- kmeans(x,one_k,iter.max = iter.max)
