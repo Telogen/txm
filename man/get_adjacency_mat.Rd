@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_adjacency_mat.R
 \name{get_adjacency_mat}
 \alias{get_adjacency_mat}
-\title{Get adjacency matrix}
+\title{Get adjacency matrix from a sample-feature matrix}
 \usage{
 get_adjacency_mat(data, k = 20)
 }
@@ -15,5 +15,5 @@ get_adjacency_mat(data, k = 20)
 Returns a adjacency matrix
 }
 \description{
-Get adjacency matrix
+Get adjacency matrix from a sample-feature matrix
 }

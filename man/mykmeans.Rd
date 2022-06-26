@@ -2,12 +2,12 @@
 % Please edit documentation in R/mykmeans.R
 \name{mykmeans}
 \alias{mykmeans}
-\title{Perform kmeans with multiple 'k's and automatically select the best k with the}
+\title{Perform kmeans with multiple 'k's and automatically select the best k}
 \usage{
 mykmeans(x, k)
 }
 \arguments{
-\item{x}{numeric matrix of data, or an object that can be coerced to such a matrix (such as a numeric vector or a data frame with all numeric columns).}
+\item{x}{numeric matrix of data, or an object that can be coerced to such a matrix.}
 
 \item{k}{a set of candidate centers}
 }
