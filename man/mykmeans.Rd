@@ -4,16 +4,18 @@
 \alias{mykmeans}
 \title{Perform kmeans with multiple 'k's and automatically select the best k}
 \usage{
-mykmeans(x, k)
+mykmeans(x, k, iter.max = 10)
 }
 \arguments{
 \item{x}{numeric matrix of data, or an object that can be coerced to such a matrix.}
 
-\item{k}{a set of candidate centers}
+\item{k}{a set of candidate centers.}
+
+\item{iter.max}{the maximum number of iterations allowed.}
 }
 \value{
 returns an object of class "kmeans".
 }
 \description{
-Perform kmeans with multiple 'k's and automatically select the best k with the maximum silhouette
+Perform kmeans with multiple 'k's and automatically select the best k with the maximum average silhouette
 }
