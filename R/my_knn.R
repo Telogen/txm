@@ -64,8 +64,8 @@ my_knn <- function(train,labels,test,k,method = 'weighted',dist.metric = 'cosine
         one_nn_idx <- nn.idx[row_idx,]
         nn_labels <- local_ref_labels[one_nn_idx]
         TAB <- table(nn_labels)
-
         pred <- names(TAB)[which.max(TAB)]
+        score <- max(TAB)/sum(TAB)
         names(score) <- pred
         return(score)
       })
