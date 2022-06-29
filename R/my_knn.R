@@ -15,7 +15,7 @@
 
 my_knn <- function(train,labels,test,k,method = 'weighted',dist.metric = 'cosine',verbose = T){
   if(verbose == T){
-    message(paste0('Finding knn based on ',dist.metric,' distance metric.'))
+    message(paste0('Finding knn based on ',dist.metric,' distance metric'))
   }
   Seurat_NNHelper <- utils::getFromNamespace("NNHelper", "Seurat")
   KNN <- Seurat_NNHelper(data = train, query = test,k = k, method = "annoy",metric = dist.metric)
@@ -23,7 +23,7 @@ my_knn <- function(train,labels,test,k,method = 'weighted',dist.metric = 'cosine
   nn.dist <- KNN@nn.dist
 
   if(verbose == T){
-    message(paste0('Predicting labels using ',method,' knn method.'))
+    message(paste0('Predicting labels using ',method,' knn method'))
   }
   if (method == 'weighted'){
     weighted_knn <- function(nn.idx,nn.dist,labels = labels){
