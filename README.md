@@ -5,11 +5,13 @@ Some useful R functions for bioinformatics study.
 ## Installation
 ```
 devtools::install_github("Telogen/txmBioinfoToolkit")
-library(txmBioinfoToolkit)
 ```
 
 ## Update history
 
+### 20220629
+
+- `my_knn()`: Several K Nearest Neighbors (KNN) methods (package 'Seurat' required)
 
 
 ### 20220626
