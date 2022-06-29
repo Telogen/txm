@@ -2,9 +2,11 @@
 
 export("%>%")
 export(get_adjacency_mat)
+export(my_RF)
 export(my_knn)
 export(mykmeans)
 importFrom(Matrix,sparseMatrix)
 importFrom(cluster,silhouette)
 importFrom(magrittr,"%>%")
+importFrom(randomForest,randomForest)
 importFrom(utils,getFromNamespace)

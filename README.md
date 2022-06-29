@@ -12,6 +12,7 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 ### 20220629
 
 - `my_knn()`: Several K Nearest Neighbors (KNN) methods (package 'Seurat' required)
+- `my_RF()`: Random forest code memo (package 'randomForest' required)
 
 
 ### 20220626
