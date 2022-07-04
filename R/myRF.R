@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @importFrom randomForest randomForest
-my_RF <- function(train,labels,test,verbose = T){
+myRF <- function(train,labels,test,verbose = T){
   train <- as.data.frame(train)
   train$labels <- as.factor(labels)
   model <- randomForest::randomForest(CT ~ ., data = train, importance=TRUE, proximity=TRUE)

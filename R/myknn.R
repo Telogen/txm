@@ -79,7 +79,7 @@ self_weighted_knn <- function(nn.idx,nn.dist,labels){
 #' @export
 #'
 
-my_knn <- function(train,labels,test,k,method = 'weighted',dist.metric = 'cosine',verbose = T){
+myknn <- function(train,labels,test,k,method = 'weighted',dist.metric = 'cosine',verbose = T){
   if(verbose == T){
     message(paste0('Finding knn based on ',dist.metric,' distance metric'))
   }
