@@ -97,6 +97,8 @@ my_knn <- function(train,labels,test,k,method = 'weighted',dist.metric = 'cosine
     raw_pred <- ss_knn(nn.idx,nn.dist,labels)
   } else if (method == 'normal'){
     raw_pred <- normal_knn(nn.idx,nn.dist,labels)
+  } else if (method == 'self_weighted'){
+    raw_pred <- self_weighted_knn(nn.idx,nn.dist,labels)
   }
   out <- data.frame(pred_labs = names(raw_pred),
                     score = as.numeric(raw_pred))

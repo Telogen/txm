@@ -9,6 +9,12 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ## Update history
 
+
+### 20220704
+
+- [`my_binarize()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/my_binarize.R): Binarize matrix (package 'methods' required)
+- [`my_tfidf()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/my_tfidf.R): TF-IDF (package 'Matrix' required)
+
 ### 20220629
 
 - [`my_knn()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/my_knn.R): Several K Nearest Neighbors (KNN) methods (package 'Seurat' required)
