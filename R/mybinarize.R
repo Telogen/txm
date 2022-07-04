@@ -5,7 +5,6 @@
 #' @return a binarized matrix
 #' @export
 #'
-#' @examples
 mybinarize <- function(object){
   if (inherits(x = object, what = "dgCMatrix")) {
     methods::slot(object = object, name = "x") <-
