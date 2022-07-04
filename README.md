@@ -12,13 +12,13 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ### 20220704
 
-- [`my_binarize()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/my_binarize.R): Binarize matrix (package 'methods' required)
-- [`my_tfidf()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/my_tfidf.R): TF-IDF (package 'Matrix' required)
+- [`mybinarize()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/mybinarize.R): Binarize matrix (package 'methods' required)
+- [`mytfidf()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/mytfidf.R): TF-IDF (package 'Matrix' required)
 
 ### 20220629
 
-- [`my_knn()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/my_knn.R): Several K Nearest Neighbors (KNN) methods (package 'Seurat' required)
-- [`my_RF()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/my_RF.R): Random forest code memo (package 'randomForest' required)
+- [`myknn()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myknn.R): Several K Nearest Neighbors (KNN) methods (package 'Seurat' required)
+- [`myRF()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myRF.R): Random forest code memo (package 'randomForest' required)
 
 
 ### 20220626
