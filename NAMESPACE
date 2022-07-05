@@ -2,10 +2,10 @@
 
 export("%>%")
 export(get_adjacency_mat)
-export(my_RF)
-export(my_knn)
+export(myRF)
 export(mybinarize)
 export(mykmeans)
+export(myknn)
 export(mytfidf)
 importFrom(Matrix,sparseMatrix)
 importFrom(cluster,silhouette)

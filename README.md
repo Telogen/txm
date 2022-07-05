@@ -9,6 +9,9 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ## Update history
 
+### 20220705
+
+- [`top_n()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/top_n.R): Get top n elements
 
 ### 20220704
 

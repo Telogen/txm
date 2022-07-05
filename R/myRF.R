@@ -12,10 +12,10 @@
 myRF <- function(train,labels,test,verbose = T){
   train <- as.data.frame(train)
   train$labels <- as.factor(labels)
-  model <- randomForest::randomForest(CT ~ ., data = train, importance=TRUE, proximity=TRUE)
-  if (varImpPlot == T){
-    print(varImpPlot(RF, main = "variable importance"))
+  model <- randomForest::randomForest(labels ~ ., data = train, importance=TRUE, proximity=TRUE)
+  if (verbose == T){
+    print(randomForest::varImpPlot(RF, main = "variable importance"))
   }
-  pred <- predict(RF,newdata = test)
+  pred <- predict(model,newdata = test)
   return(pred)
 }
