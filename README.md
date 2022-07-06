@@ -12,10 +12,10 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 ### 20220706
 
 - [`ggplot2_memo.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/ggplot2_memo.R): ggplot2 functions memo. (package 'ggplot2' required)
-  - `myplot_addline`: add vertical, horizontal, oblique line.
-  - `myplot_text`: add texts.
-  - `myplot_density`: density plot.
-  - `myplot_scatter_with_density`: scatter plot with density plot of x and y axis.
+  - `myplot_addline`: Add vertical, horizontal, or oblique line.
+  - `myplot_text`: Add texts.
+  - `myplot_density`: Density plot.
+  - `myplot_scatter_with_density`: Scatter plot with density plot of x and y axis.
 
 ### 20220705
 
