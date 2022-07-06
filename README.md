@@ -11,7 +11,12 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ### 20220706
 
-- [`ggplot2_memo.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/ggplot2_memo.R): ggplot2 functions memo. (package 'ggplot2' required)
+- [`memo_install_packages.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/memo_install_packages.R): Memo of installing R packages. 
+  - `myinstall_with_C99`: Install R packages with C99 standard. (package 'withr' required)
+  - `myinstall_version`: Install R package with specific version. (package 'remotes' required)
+  - `myinstall_local`: Install local R package. (package 'devtools' required)
+
+- [`memo_ggplot2.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/ggplot2_memo.R): Memo of ggplot2 functions. (package 'ggplot2' required)
   - `myplot_addline`: Add vertical, horizontal, or oblique line.
   - `myplot_text`: Add texts.
   - `myplot_density`: Density plot.
@@ -29,7 +34,7 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 ### 20220629
 
 - [`myknn()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myknn.R): Several K Nearest Neighbors (KNN) methods. (package 'Seurat' required)
-- [`myRF()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myRF.R): Random forest code memo. (package 'randomForest' required)
+- [`myRF()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myRF.R): Memo of random forest code. (package 'randomForest' required)
 
 
 ### 20220626
