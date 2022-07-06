@@ -6,7 +6,7 @@
 #' @return
 #' @export
 #'
-top_n <- function(x,n){x[1:n]}
+top_n <- function(x,n){sort(x)[1:n]}
 
 
 

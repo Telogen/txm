@@ -13,7 +13,7 @@ myplot_addline <- function(){
               intercept = 0,     # 截距
               color='black',
               linetype = "dashed",
-              size=1)
+              size = .5)     # 粗细
 }
 
 
@@ -30,7 +30,62 @@ myplot_text <- function(){
 }
 
 
+#' Density plot
+#'
+#' @return
+#' @export
+#'
+myplot_density <- function(){
+  # 根据count数调整密度图高度
+  ggplot(data, aes(x, fill = group.by, colour = group.by)) +
+    geom_density(aes(y = after_stat(count),alpha = 0.5)) +
+    scale_fill_manual(values=c("#00BFC4", "#F8766D")) +
+    scale_color_manual(values=c("#00BFC4", "#F8766D"))
+  # 上下拉满
+  ggplot(data, aes(x, fill = group.by, colour = group.by)) +
+    geom_density(position = "fill",aes(y = after_stat(count),alpha = 0.5)) +
+    scale_fill_manual(values=c("#00BFC4", "#F8766D")) +
+    scale_color_manual(values=c("#00BFC4", "#F8766D"))
+  # 累加密度
+  ggplot(data, aes(x, fill = group.by, colour = group.by)) +
+    geom_density(position = "fill",aes(y = after_stat(count),alpha = 0.5)) +
+    scale_fill_manual(values=c("#00BFC4", "#F8766D")) +
+    scale_color_manual(values=c("#00BFC4", "#F8766D"))
+}
 
 
+#' Scatter plot with density plot of x and y axis
+#'
+#' @return
+#' @export
+#'
+myplot_scatter_with_density <- function(){
+  # 点图
+  p1 <- ggplot(data) +
+    geom_point(aes(x = GMSS, y = NMSS, size = size.by, color = group.by, shape = shape.by)) +
+    scale_size(range = c(0.1, 3))
+  # x轴的密度图
+  p2 <- ggplot(data, aes(x = GMSS, color = group.by)) +
+    geom_density(aes(y = after_stat(count), fill = group.by,
+                     alpha = 0.2)) + scale_y_continuous(expand = c(0,0)) +
+    theme_void() +
+    NoLegend() +
+    ggtitle('') +
+    theme(axis.title = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank())
+  # y轴的密度图
+  p3 <- ggplot(DATA, aes(x = NMSS, color = group.by)) +
+    geom_density(aes(y = after_stat(count), fill = group.by,
+                     alpha = 0.2)) + scale_y_continuous(expand = c(0, 0)) +
+    theme_void() +
+    coord_flip() + NoLegend() +
+    theme(axis.title = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank()) +
+  # final plot
+  p <- p1 %>%
+    aplot::insert_top(p2, height = 0.2) %>%
+    aplot::insert_right(p3, 0.2)
 
-
+}
