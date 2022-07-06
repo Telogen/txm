@@ -9,6 +9,12 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ## Update history
 
+### 20220706
+
+- [`ggplot2_memo.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/ggplot2_memo.R): ggplot2 functions memo
+  - Add vertical, horizontal, oblique line: geom_vline(), geom_hline(), geom_abline().
+  - Add texts: geom_text()
+
 ### 20220705
 
 - [`top_n()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/top_n.R): Get top n elements
