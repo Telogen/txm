@@ -12,6 +12,10 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ### 20220709
 
+- [`get_rank.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/get_rank.R): Get ranks of a series of numerics with names.
+
+### 20220709
+
 - [`myplot_ComPlexHeatmap.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myplot_ComPlexHeatmap.R): Memo of ComPlexHeatmap functions. (package 'ComPlexHeatmap' required)
 
 ### 20220706
