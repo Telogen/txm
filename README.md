@@ -3,20 +3,25 @@
 Some useful R functions for bioinformatics study.
 
 ## Installation
+
 ```
 devtools::install_github("Telogen/txmBioinfoToolkit")
 ```
 
 ## Update history
 
+### 20220709
+
+- [`myplot_ComPlexHeatmap.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myplot_ComPlexHeatmap.R): Memo of ComPlexHeatmap functions. (package 'ComPlexHeatmap' required)
+
 ### 20220706
 
-- [`memo_install_packages.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/memo_install_packages.R): Memo of installing R packages. 
+- [`myinstall.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myinstall.R): Memo of installing R packages. 
   - `myinstall_with_C99`: Install R packages with C99 standard. (package 'withr' required)
   - `myinstall_version`: Install R package with specific version. (package 'remotes' required)
   - `myinstall_local`: Install local R package. (package 'devtools' required)
 
-- [`memo_ggplot2.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/ggplot2_memo.R): Memo of ggplot2 functions. (package 'ggplot2' required)
+- [`myplot_ggplot.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myplot_ggplot2.R): Memo of ggplot2 functions. (package 'ggplot2' required)
   - `myplot_addline`: Add vertical, horizontal, or oblique line.
   - `myplot_text`: Add texts.
   - `myplot_density`: Density plot.
