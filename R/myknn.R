@@ -3,6 +3,16 @@ weighted_knn <- function(nn.idx,nn.dist,labels){
     one_nn_idx <- nn.idx[row_idx,]
     one_nn_dist <- nn.dist[row_idx,]
     nn_labels <- labels[one_nn_idx]
+    if(one_nn_dist[1] < .001){
+      one_nn_idx <- one_nn_idx[-1]
+      one_nn_dist <- one_nn_dist[-1]
+      nn_labels <- nn_labels[-1]
+    } else{
+      last_idx <- length(one_nn_idx)
+      one_nn_idx <- one_nn_idx[-last_idx]
+      one_nn_dist <- one_nn_dist[-last_idx]
+      nn_labels <- nn_labels[-last_idx]
+    }
     one_nn_weight <- (max(one_nn_dist) - one_nn_dist) / (max(one_nn_dist) - min(one_nn_dist))
     labels_impact <- sapply(unique(nn_labels),function(label){
       sum(one_nn_weight[which(nn_labels == label)])
@@ -18,7 +28,17 @@ ss_knn <- function(nn.idx,nn.dist,labels){
   sapply(1:nrow(nn.idx),function(row_idx){
     one_nn_idx <- nn.idx[row_idx,]
     one_nn_dist <- nn.dist[row_idx,]
-    nn_labels <- local_ref_labels[one_nn_idx]
+    nn_labels <- labels[one_nn_idx]
+    if(one_nn_dist[1] < .001){
+      one_nn_idx <- one_nn_idx[-1]
+      one_nn_dist <- one_nn_dist[-1]
+      nn_labels <- nn_labels[-1]
+    } else{
+      last_idx <- length(one_nn_idx)
+      one_nn_idx <- one_nn_idx[-last_idx]
+      one_nn_dist <- one_nn_dist[-last_idx]
+      nn_labels <- nn_labels[-last_idx]
+    }
     labels_impact <- sapply(unique(nn_labels),function(label){
       exp(-one_nn_dist[which(nn_labels == label)]) %>% mean()
     })
@@ -41,21 +61,6 @@ normal_knn <- function(nn.idx,nn.dist,labels){
   })
 }
 
-self_weighted_knn <- function(nn.idx,nn.dist,labels){
-  sapply(1:nrow(nn.idx),function(row_idx){
-    one_nn_idx <- nn.idx[row_idx,][-1]
-    one_nn_dist <- nn.dist[row_idx,][-1]
-    nn_labels <- labels[one_nn_idx][-1]
-    one_nn_weight <- (max(one_nn_dist) - one_nn_dist) / (max(one_nn_dist) - min(one_nn_dist))
-    labels_impact <- sapply(unique(nn_labels),function(label){
-      sum(one_nn_weight[which(nn_labels == label)])
-    })
-    pred <- names(labels_impact)[which.max(labels_impact)]
-    score <- max(labels_impact)/sum(labels_impact)
-    names(score) <- pred
-    return(score)
-  })
-}
 
 #' Several K Nearest Neighbors (KNN) methods
 #'
@@ -68,8 +73,6 @@ self_weighted_knn <- function(nn.idx,nn.dist,labels){
 #'   \item{'weighted': }{weighted knn}
 #'   \item{'Shieh': }{https://ieeexplore.ieee.org/document/6298627}
 #'   \item{'normal': }{normal knn}
-#'   \item{'self_weighted': }{using all labeled data as reference to predict the same data as unlabeled query,
-#'    the nearest neighbor of one sample is not itself.}
 #' }
 #' @param dist.metric Distance metric; can be one of "euclidean", "cosine", "manhattan",
 # "hamming"
@@ -84,7 +87,7 @@ myknn <- function(train,labels,test,k,method = 'weighted',dist.metric = 'cosine'
     message(paste0('Finding knn based on ',dist.metric,' distance metric'))
   }
   Seurat_NNHelper <- utils::getFromNamespace("NNHelper", "Seurat")
-  KNN <- Seurat_NNHelper(data = train, query = test,k = k, method = "annoy",metric = dist.metric)
+  KNN <- Seurat_NNHelper(data = train, query = test,k = (k + 1), method = "annoy",metric = dist.metric)
   nn.idx <- KNN@nn.idx
   nn.dist <- KNN@nn.dist
 
@@ -97,9 +100,8 @@ myknn <- function(train,labels,test,k,method = 'weighted',dist.metric = 'cosine'
     raw_pred <- ss_knn(nn.idx,nn.dist,labels)
   } else if (method == 'normal'){
     raw_pred <- normal_knn(nn.idx,nn.dist,labels)
-  } else if (method == 'self_weighted'){
-    raw_pred <- self_weighted_knn(nn.idx,nn.dist,labels)
   }
+
   out <- data.frame(pred_labs = names(raw_pred),
                     score = as.numeric(raw_pred))
   return(out)

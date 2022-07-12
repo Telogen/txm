@@ -89,3 +89,21 @@ myplot_scatter_with_density <- function(){
     aplot::insert_right(p3, 0.2)
 
 }
+
+
+
+
+#' Barplot
+#'
+#' @return
+#' @export
+#'
+myplot_bar <- function(){
+  ggplot(data,aes(x = dataset, y = value, fill = cells,group = cells)) +
+    geom_bar(aes(color = cells),stat = "identity",position = position_dodge(width = 0.8,preserve = 'single'),width = 0.7) +
+    geom_text(aes(label = round(value,2)),size = 3,position = position_dodge(.8),vjust = -0.2) +
+    coord_cartesian(ylim = c(0, 1))
+}
+
+
+

@@ -10,9 +10,13 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ## Update history
 
+### 20220712
+
+- [`get_rank.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/get_rank.R): Get ranks of a vector with names.
+
 ### 20220709
 
-- [`get_rank.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/get_rank.R): Get ranks of a series of numerics with names.
+- [`get_quantile()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/get_rank.R): Get quantile of a number in a vector.
 
 ### 20220709
 
@@ -30,6 +34,7 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
   - `myplot_text`: Add texts.
   - `myplot_density`: Density plot.
   - `myplot_scatter_with_density`: Scatter plot with density plot of x and y axis.
+  - `myplot_bar`: Barplot.
 
 ### 20220705
 
