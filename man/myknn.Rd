@@ -28,8 +28,6 @@ myknn(
   \item{'weighted': }{weighted knn}
   \item{'Shieh': }{https://ieeexplore.ieee.org/document/6298627}
   \item{'normal': }{normal knn}
-  \item{'self_weighted': }{using all labeled data as reference to predict the same data as unlabeled query,
-   the nearest neighbor of one sample is not itself.}
 }}
 
 \item{dist.metric}{Distance metric; can be one of "euclidean", "cosine", "manhattan",}
