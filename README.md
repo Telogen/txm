@@ -13,9 +13,6 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 ### 20220712
 
 - [`get_rank.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/get_rank.R): Get ranks of a vector with names.
-
-### 20220709
-
 - [`get_quantile()`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/get_rank.R): Get quantile of a number in a vector.
 
 ### 20220709

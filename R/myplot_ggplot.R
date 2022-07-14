@@ -106,4 +106,12 @@ myplot_bar <- function(){
 }
 
 
+#' Combine several ggplots
+#'
+#' @return
+#' @export
+#'
+myplot_combine <- function(){
+  ggpubr::ggarrange(plotlist = list(p1,p2,p3,p4),ncol = 1,nrow = 4)
+}
 
