@@ -3,7 +3,6 @@
 #' @param package.name R package name(s)
 #' @param via 'CRAN' or 'bioc'(bioconductor)
 #'
-#' @return
 #' @export
 #'
 myinstall_with_C99 <- function(package.name,via = 'CRAN'){
@@ -21,7 +20,6 @@ myinstall_with_C99 <- function(package.name,via = 'CRAN'){
 
 #' Install R package with specific version
 #'
-#' @return
 #' @export
 #'
 myinstall_version <- function(){
@@ -35,7 +33,6 @@ myinstall_version <- function(){
 
 #' Install local R package
 #'
-#' @return
 #' @export
 #'
 myinstall_local <- function(local.path){

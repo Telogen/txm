@@ -1,6 +1,5 @@
 #' create a sparseMatrix
 #'
-#' @return
 #' @export
 #'
 mysparseMatrix <- function(){

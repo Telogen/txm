@@ -6,9 +6,6 @@
 \usage{
 myinstall_version()
 }
-\value{
-
-}
 \description{
 Install R package with specific version
 }

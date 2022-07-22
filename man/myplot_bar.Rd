@@ -6,9 +6,6 @@
 \usage{
 myplot_bar()
 }
-\value{
-
-}
 \description{
 Barplot
 }

@@ -1,6 +1,5 @@
 #' ComPlexHeatmap memo code
 #'
-#' @return
 #' @export
 #'
 myplot_Heatmap <- function(){

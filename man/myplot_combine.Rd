@@ -6,9 +6,6 @@
 \usage{
 myplot_combine()
 }
-\value{
-
-}
 \description{
 Combine several ggplots
 }

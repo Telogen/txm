@@ -6,9 +6,6 @@
 \usage{
 myplot_density()
 }
-\value{
-
-}
 \description{
 Density plot
 }

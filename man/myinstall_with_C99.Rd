@@ -11,9 +11,6 @@ myinstall_with_C99(package.name, via = "CRAN")
 
 \item{via}{'CRAN' or 'bioc'(bioconductor)}
 }
-\value{
-
-}
 \description{
 Install R packages with C99 standard
 }

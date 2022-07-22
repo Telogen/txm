@@ -1,6 +1,5 @@
 #' Add a line in ggplot
 #'
-#' @return
 #' @export
 #'
 myplot_addline <- function(){
@@ -20,7 +19,6 @@ myplot_addline <- function(){
 
 #' geom_text memo
 #'
-#' @return
 #' @export
 #'
 myplot_text <- function(){
@@ -32,7 +30,6 @@ myplot_text <- function(){
 
 #' Density plot
 #'
-#' @return
 #' @export
 #'
 myplot_density <- function(){
@@ -56,7 +53,6 @@ myplot_density <- function(){
 
 #' Scatter plot with density plot of x and y axis
 #'
-#' @return
 #' @export
 #'
 myplot_scatter_with_density <- function(){
@@ -95,7 +91,6 @@ myplot_scatter_with_density <- function(){
 
 #' Barplot
 #'
-#' @return
 #' @export
 #'
 myplot_bar <- function(){
@@ -108,7 +103,6 @@ myplot_bar <- function(){
 
 #' Combine several ggplots
 #'
-#' @return
 #' @export
 #'
 myplot_combine <- function(){
@@ -120,10 +114,8 @@ myplot_combine <- function(){
 
 #' Heatmap with fraction inside
 #'
-#' @return
 #' @export
 #'
-#' @examples
 myplot_heat <- function(){
   ggplot(predictions, aes(Var1, Var2, fill = Freq)) +
     geom_tile()

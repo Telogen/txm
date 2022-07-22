@@ -6,9 +6,6 @@
 \usage{
 myplot_scatter_with_density()
 }
-\value{
-
-}
 \description{
 Scatter plot with density plot of x and y axis
 }

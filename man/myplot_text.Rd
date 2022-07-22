@@ -6,9 +6,6 @@
 \usage{
 myplot_text()
 }
-\value{
-
-}
 \description{
 geom_text memo
 }

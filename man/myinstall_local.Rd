@@ -6,9 +6,6 @@
 \usage{
 myinstall_local(local.path)
 }
-\value{
-
-}
 \description{
 Install local R package
 }

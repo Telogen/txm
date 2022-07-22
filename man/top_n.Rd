@@ -4,15 +4,12 @@
 \alias{top_n}
 \title{Get top n elements}
 \usage{
-top_n(x, n)
+top_n(x, n, decreasing = T)
 }
 \arguments{
 \item{x}{a vector}
 
 \item{n}{top n}
-}
-\value{
-
 }
 \description{
 Get top n elements
