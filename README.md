@@ -10,6 +10,10 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ## Update history
 
+### 20220722
+
+- [`mysparseMatrix.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/mysparseMatrix.R): memo of creating a sparseMatrix.
+
 ### 20220712
 
 - [`get_rank.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/get_rank.R): Get ranks of a vector with names.
@@ -17,7 +21,7 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ### 20220709
 
-- [`myplot_ComPlexHeatmap.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myplot_ComPlexHeatmap.R): Memo of ComPlexHeatmap functions. (package 'ComPlexHeatmap' required)
+- [`myplot_ComplexHeatmap.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/myplot_ComplexHeatmap.R): Memo of ComplexHeatmap functions. (package 'ComplexHeatmap' required)
 
 ### 20220706
 

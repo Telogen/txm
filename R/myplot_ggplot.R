@@ -115,3 +115,27 @@ myplot_combine <- function(){
   ggpubr::ggarrange(plotlist = list(p1,p2,p3,p4),ncol = 1,nrow = 4)
 }
 
+
+
+
+#' Heatmap with fraction inside
+#'
+#' @return
+#' @export
+#'
+#' @examples
+myplot_heat <- function(){
+  ggplot(predictions, aes(Var1, Var2, fill = Freq)) +
+    geom_tile()
+    scale_fill_gradient(name = "Number of cells",low = "#ffffc8", high = "#7d0025")  +
+    xlab("Predicted cell type") +
+    ylab("True cell type") +
+    theme_cowplot() +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+    geom_text(aes(label = round(Freq * 100,2)),size = 3)
+}
+
+
+
+
+
