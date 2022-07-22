@@ -12,7 +12,7 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ### 20220722
 
-- [`mysparseMatrix.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/mysparseMatrix.R): memo of creating a sparseMatrix.
+- [`mysparseMatrix.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/mysparseMatrix.R): Memo of creating a sparseMatrix.
 
 ### 20220712
 
