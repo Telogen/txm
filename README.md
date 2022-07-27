@@ -10,6 +10,11 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ## Update history
 
+### 20220727
+
+- [`get_cutoff.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/get_cutoff.R): Get cutoff based on the best F1 score. (package 'MLmetrics, ggplot2' required)
+
+
 ### 20220722
 
 - [`mysparseMatrix.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/mysparseMatrix.R): Memo of creating a sparseMatrix.

@@ -2,6 +2,7 @@
 
 export("%>%")
 export(get_adjacency_mat)
+export(get_cutoff)
 export(get_quantile)
 export(get_rank)
 export(myRF)
