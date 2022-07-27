@@ -4,11 +4,12 @@
 #' @param labels
 #' @param true_label
 #' @param plot
+#' @param min.F1
 #'
 #' @return Return the best cutoff
 #' @export
 #'
-get_cutoff <- function(value,labels,true_label = 'TRUE',plot = F){
+get_cutoff <- function(value,labels,true_label = 'TRUE',min.F1 = NULL,plot = F){
   # value <- a
   # labels <- final_seed_meta$kendall_pred
   # true_label <- 'gdT'
@@ -23,7 +24,11 @@ get_cutoff <- function(value,labels,true_label = 'TRUE',plot = F){
     F1 <- MLmetrics::F1_Score(true_label,cutoff_label)
     c(Precision = P,Recall = R,F1 = F1)
   })
-  best_cutoff_idx <- which.max(alternative_cutoffs_benchmark[3,])
+  if(is.null(min.F1)){
+    best_cutoff_idx <- which.max(alternative_cutoffs_benchmark[3,])
+  } else{
+    best_cutoff_idx <- which(alternative_cutoffs_benchmark[3,] > min.F1)[1]
+  }
   best_cutoff <- alternative_cutoffs[best_cutoff_idx]
 
   if(plot == TRUE){

@@ -2,16 +2,16 @@
 % Please edit documentation in R/get_cutoff.R
 \name{get_cutoff}
 \alias{get_cutoff}
-\title{get cutoff based on the best F1 score}
+\title{Get cutoff based on the best F1 score}
 \usage{
-get_cutoff(value, labels, true_label = "TRUE", plot = F)
+get_cutoff(value, labels, true_label = "TRUE", min.F1 = NULL, plot = F)
 }
 \arguments{
-\item{plot}{}
+\item{min.F1}{}
 }
 \value{
 Return the best cutoff
 }
 \description{
-get cutoff based on the best F1 score
+Get cutoff based on the best F1 score
 }
