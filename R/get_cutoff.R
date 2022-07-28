@@ -16,12 +16,13 @@ get_cutoff <- function(value,labels,true_label = 'TRUE',min.F1 = NULL,plot = F){
   if(true_label != 'TRUE'){
     true_label <- labels == true_label
   }
-  alternative_cutoffs <- seq(min(value),max(value),length.out = 50)
+
+  alternative_cutoffs <- quantile(value[is.finite(value)],seq(.02,.98,.02))
   alternative_cutoffs_benchmark <- sapply(alternative_cutoffs,function(cutoff){
     cutoff_label <- value > cutoff
-    P <- MLmetrics::Precision(true_label,cutoff_label)
-    R <- MLmetrics::Recall(true_label,cutoff_label)
-    F1 <- MLmetrics::F1_Score(true_label,cutoff_label)
+    P <- MLmetrics::Precision(true_label,cutoff_label,positive = 'TRUE')
+    R <- MLmetrics::Recall(true_label,cutoff_label,positive = 'TRUE')
+    F1 <- MLmetrics::F1_Score(true_label,cutoff_label,positive = 'TRUE')
     c(Precision = P,Recall = R,F1 = F1)
   })
   if(is.null(min.F1)){
