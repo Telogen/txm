@@ -1,10 +1,11 @@
 #' Get cutoff based on the best F1 score
 #'
-#' @param value
-#' @param labels
-#' @param true_label
-#' @param plot
-#' @param min.F1
+#' @param value a vector of values
+#' @param labels the labels of a vector of values
+#' @param true_label true labels
+#' @param plot whether to plot
+#' @param min.F1 the minimum F1
+#' @param alternative_cutoffs alternative cutoffs
 #'
 #' @return Return the best cutoff
 #' @export

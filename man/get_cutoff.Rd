@@ -14,7 +14,17 @@ get_cutoff(
 )
 }
 \arguments{
-\item{min.F1}{}
+\item{value}{a vector of values}
+
+\item{labels}{the labels of a vector of values}
+
+\item{true_label}{true labels}
+
+\item{min.F1}{the minimum F1}
+
+\item{alternative_cutoffs}{alternative cutoffs}
+
+\item{plot}{whether to plot}
 }
 \value{
 Return the best cutoff

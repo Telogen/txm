@@ -134,6 +134,22 @@ myplot_heat <- function(){
 }
 
 
-
+#' myplot_pie
+#'
+#' @export
+#'
+myplot_pie <- function(){
+  pie_data <- data.frame(table(data$Institute))
+  colnames(pie_data) <- c('Institutes','Freqency')
+  pie_data$Percentage = pie_data$Freq/sum(pie_data$Freq)*100
+  pie_data$label = rev(paste0(pie_data$Institutes,'\n',pie_data$Freqency,'篇\n',round(pie_data$Freq/sum(pie_data$Freq)*100,2),'%'))
+  fig2 <- ggplot(pie_data, aes(x = "", y = Percentage, fill = Institutes)) +
+    geom_bar(stat = "identity") +
+    coord_polar(theta = "y") +
+    geom_text(aes(y= 100-(cumsum(Percentage)-Percentage/2), x= 1.1),
+              label = rev(pie_data$label)) +
+    labs(x = '', y = '') +
+    cowplot::theme_nothing()
+}
 
 
