@@ -9,15 +9,17 @@
 #' @return Return the best cutoff
 #' @export
 #'
-get_cutoff <- function(value,labels,true_label = 'TRUE',min.F1 = NULL,plot = F){
+get_cutoff <- function(value,labels,true_label = 'TRUE',min.F1 = NULL,alternative_cutoffs = NULL, plot = F){
   # value <- a
   # labels <- final_seed_meta$kendall_pred
   # true_label <- 'gdT'
   if(true_label != 'TRUE'){
     true_label <- labels == true_label
   }
-
-  alternative_cutoffs <- quantile(value[is.finite(value)],seq(.02,.98,.02))
+  if(is.null(alternative_cutoffs)){
+    inf_value <- value[is.finite(value)]
+    alternative_cutoffs <- seq(min(inf_value),max(inf_value),length.out = 50)
+  }
   alternative_cutoffs_benchmark <- sapply(alternative_cutoffs,function(cutoff){
     cutoff_label <- value > cutoff
     P <- MLmetrics::Precision(true_label,cutoff_label,positive = 'TRUE')
@@ -47,8 +49,9 @@ get_cutoff <- function(value,labels,true_label = 'TRUE',min.F1 = NULL,plot = F){
       geom_vline(xintercept = best_cutoff, linetype = "dotted")
 
     p2 <- ggplot(plot_df,aes(x = Recall,y = Precision)) +
-      geom_point() +
-      geom_text(aes(label = is_best_cutoff,hjust = -0.2, vjust = -0.3))
+      geom_point(aes(color = is_best_cutoff)) +
+      geom_text(aes(label = round(F1,2),hjust = -0.2, vjust = -0.3)) +
+      Seurat::NoLegend()
 
     ggpubr::ggarrange(plotlist = list(p1, p2), ncol = 1, nrow = 2) %>% print()
   }

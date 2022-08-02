@@ -4,7 +4,14 @@
 \alias{get_cutoff}
 \title{Get cutoff based on the best F1 score}
 \usage{
-get_cutoff(value, labels, true_label = "TRUE", min.F1 = NULL, plot = F)
+get_cutoff(
+  value,
+  labels,
+  true_label = "TRUE",
+  min.F1 = NULL,
+  alternative_cutoffs = NULL,
+  plot = F
+)
 }
 \arguments{
 \item{min.F1}{}

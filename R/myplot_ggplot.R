@@ -98,6 +98,12 @@ myplot_bar <- function(){
     geom_bar(aes(color = cells),stat = "identity",position = position_dodge(width = 0.8,preserve = 'single'),width = 0.7) +
     geom_text(aes(label = round(value,2)),size = 3,position = position_dodge(.8),vjust = -0.2) +
     coord_cartesian(ylim = c(0, 1))
+
+  # count作为高度
+  ggplot(data = data,aes(x = Month)) +
+    geom_bar(width = 0.8,aes(fill = Institute)) +
+    geom_text(stat='count', aes(label=..count..), vjust= -0.1) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 0.5, vjust = 0.5))
 }
 
 

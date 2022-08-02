@@ -1,4 +1,5 @@
 weighted_knn <- function(nn.idx,nn.dist,labels){
+  labels <- as.character(labels)
   sapply(1:nrow(nn.idx),function(row_idx){
     one_nn_idx <- nn.idx[row_idx,]
     one_nn_dist <- nn.dist[row_idx,]
@@ -25,6 +26,7 @@ weighted_knn <- function(nn.idx,nn.dist,labels){
 }
 
 ss_knn <- function(nn.idx,nn.dist,labels){
+  labels <- as.character(labels)
   sapply(1:nrow(nn.idx),function(row_idx){
     one_nn_idx <- nn.idx[row_idx,]
     one_nn_dist <- nn.dist[row_idx,]
@@ -50,6 +52,7 @@ ss_knn <- function(nn.idx,nn.dist,labels){
 }
 
 normal_knn <- function(nn.idx,nn.dist,labels){
+  labels <- as.character(labels)
   sapply(1:nrow(nn.idx),function(row_idx){
     one_nn_idx <- nn.idx[row_idx,]
     nn_labels <- local_ref_labels[one_nn_idx]
@@ -87,7 +90,7 @@ myknn <- function(train,labels,test,k,method = 'weighted',dist.metric = 'cosine'
     message(paste0('Finding knn based on ',dist.metric,' distance metric'))
   }
   Seurat_NNHelper <- utils::getFromNamespace("NNHelper", "Seurat")
-  KNN <- Seurat_NNHelper(data = train, query = test,k = (k + 1), method = "annoy",metric = dist.metric)
+  KNN <- Seurat_NNHelper(data = as.matrix(train), query = as.matrix(test),k = (k + 1), method = "annoy",metric = dist.metric)
   nn.idx <- KNN@nn.idx
   nn.dist <- KNN@nn.dist
 
