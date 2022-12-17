@@ -10,6 +10,11 @@ devtools::install_github("Telogen/txmBioinfoToolkit")
 
 ## Update history
 
+### 20221217
+
+- [`my_plot_jupyter_settings.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/my_plot_jupyter_settings.R): 
+
+
 ### 20220727
 
 - [`get_cutoff.R`](https://github.com/Telogen/txmBioinfoToolkit/blob/main/R/get_cutoff.R): Get cutoff based on the best F1 score. (package 'MLmetrics, ggplot2' required)
