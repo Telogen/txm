@@ -2,15 +2,10 @@
 
 Some useful R functions for bioinformatics study.
 
-## Installation
-
-```
-devtools::install_github("Telogen/txmBioinfoToolkit")
-```
 
 ## Update history
 
-- my_liftover: Liftover peaks from hg18 to hg38.
+- my_liftover: Liftover peaks from hg19 to hg38.
 - read_h5ad_as_Seurat: read h5ad file as Seurat object in R.
 - myplot_jupyter_settings: memo of jupyter settings to control plot size, etc.
 - get_cutoff: Get cutoff based on the best F1 score.
