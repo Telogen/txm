@@ -5,6 +5,8 @@ Some useful R functions for bioinformatics study.
 
 ## Update history
 
+- my_read_10X: read 10X-like single cell files as a matrix.
+- my_theme: My ggplot2 theme memo.
 - my_liftover: Liftover peaks from hg19 to hg38.
 - read_h5ad_as_Seurat: read h5ad file as Seurat object in R.
 - myplot_jupyter_settings: memo of jupyter settings to control plot size, etc.
