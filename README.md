@@ -5,6 +5,7 @@ Some useful R functions for bioinformatics study.
 
 ## Update history
 
+- myGO: GO enrichment code memo.
 - my_read_10X: read 10X-like single cell files as a matrix.
 - my_theme: My ggplot2 theme memo.
 - my_liftover: Liftover peaks from hg19 to hg38.
