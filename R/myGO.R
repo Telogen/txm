@@ -1,4 +1,12 @@
 
+#' myGO
+#'
+#' @param genes
+#'
+#' @return
+#' @export
+#'
+#' @examples
 myGO <- function(genes){
   library(clusterProfiler)
   library(org.Hs.eg.db)

@@ -5,6 +5,7 @@ Some useful R functions for bioinformatics study.
 
 ## Update history
 
+- volcano_plot: Draw volcano plot of Seurat markers.
 - myGO: GO enrichment code memo.
 - my_read_10X: read 10X-like single cell files as a matrix.
 - my_theme: My ggplot2 theme memo.
