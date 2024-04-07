@@ -19,3 +19,55 @@ myRF <- function(train,labels,test,verbose = T){
   pred <- predict(model,newdata = test)
   return(pred)
 }
+
+
+
+
+
+
+
+#' Random forest cross validation
+#'
+#' @param trainx trainx
+#' @param trainy trainy
+#' @param n.fold n.fold
+#' @param seed seed
+#'
+#' @return dataframe of true and pred_prob
+#' @export
+RF_CV <- function(trainx,trainy,n.fold = 5,seed = 123){
+  # trainx <- data_retro_multihot;trainy <- data_retro$诊断分组;n.fold = 5;seed = 123
+
+  names(trainy) <- 1:length(trainy)
+  set.seed(seed)
+  split_idx <- split(sample(1:length(trainy)), 1:n.fold)
+  pred_prob_list <- lapply(1:5,function(fold_idx){
+    # fold_idx <- 2
+    test_idx <- split_idx[[fold_idx]]
+    train_idx <- unlist(split_idx[-fold_idx],use.names = F)
+
+    testx <- trainx[test_idx,]
+    testy <- trainy[test_idx]
+    train <- trainx[train_idx,]
+    train$label <- as.factor(trainy[train_idx])
+    # train$labels <- as.factor(data_retro$诊断分组)
+    model <- randomForest::randomForest(label ~ ., data = train, importance = T, proximity = T, ntree=100)
+    pred <- predict(model, newdata = testx,type = 'prob')[,'1']
+    # pred <- predict(model, newdata = testx); get_benchmark(testy,pred)
+    head(pred)
+    head(testy)
+    pred
+  })
+  pred_prob_list
+  sampled_idx <- unlist(split_idx,use.names = F)
+  pred_probs <- unlist(pred_prob_list,use.names = F)
+  df <- data.frame(true = trainy[sampled_idx],
+                   pred_prob = pred_probs)
+  df
+}
+
+
+
+
+
+
