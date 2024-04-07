@@ -26,7 +26,7 @@ myRF <- function(train,labels,test,verbose = T){
 
 
 
-#' Random forest cross validation
+#' Random forest with cross validation
 #'
 #' @param trainx trainx
 #' @param trainy trainy

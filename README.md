@@ -5,6 +5,10 @@ Some useful R functions for bioinformatics study.
 
 ## Update history
 
+- plot_ROC: plot ROC curve.
+- plot_PRC: plot P-R Curve.
+- get_cutoffs: get best cutoffs.
+- RF_CV: Random forest with cross validation.
 - volcano_plot: Draw volcano plot of Seurat markers.
 - myGO: GO enrichment code memo.
 - my_read_10X: read 10X-like single cell files as a matrix.
